@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Daten und lokale Datenbanken
+data/
+*.duckdb
+*.duckdb.wal
+
+# Passwoerter& Zugangsadaten
+.env
+
+# Zwischenspeicher der Werkzeuge
+.pytest_cache/
+.ruff_cache/
