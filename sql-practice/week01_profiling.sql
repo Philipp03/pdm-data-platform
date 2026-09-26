@@ -25,3 +25,32 @@ SELECT t.machineID, t.datetime, COUNT(*) AS n
 FROM 'data/raw/PdM_telemetry.csv' AS t
 GROUP BY t.machineID, t.datetime
 HAVING COUNT(*) > 1;
+
+
+-- Count of NULL values per column. Expected: 0 for all columns
+SELECT
+    COUNT(*) - COUNT(datetime)  AS null_datetime,
+    COUNT(*) - COUNT(machineID) AS null_machineID,
+    COUNT(*) - COUNT(volt)      AS null_volt,
+    COUNT(*) - COUNT(rotate)    AS null_rotate,
+    COUNT(*) - COUNT(pressure)  AS null_pressure,
+    COUNT(*) - COUNT(vibration) AS null_vibration
+FROM 'data/raw/PdM_telemetry.csv';
+
+-- Min, max, and average values for numeric columns
+.mode line  
+SELECT
+    MIN(volt)             AS min_volt,
+    MAX(volt)             AS max_volt,
+    ROUND(AVG(volt), 1)   AS avg_volt,
+    MIN(rotate)           AS min_rotate,
+    MAX(rotate)           AS max_rotate,
+    ROUND(AVG(rotate), 1) AS avg_rotate,
+    MIN(pressure)         AS min_pressure,
+    MAX(pressure)         AS max_pressure,
+    ROUND(AVG(pressure), 1) AS avg_pressure,
+    MIN(vibration)        AS min_vibration,
+    MAX(vibration)        AS max_vibration,
+    ROUND(AVG(vibration), 1) AS avg_vibration
+FROM 'data/raw/PdM_telemetry.csv';
+.mode duckbox
