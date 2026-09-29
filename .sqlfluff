@@ -1,0 +1,12 @@
+[sqlfluff]
+dialect = duckdb
+max_line_length = 100
+# AM04: SELECT * is acceptable in exercise views
+# CP02: mixed-case source column names (machineID) are renamed in staging (task 1.4)
+exclude_rules = AM04, CP02
+
+[sqlfluff:rules:capitalisation.keywords]
+capitalisation_policy = upper
+
+[sqlfluff:rules:layout.long_lines]
+ignore_comment_lines = True

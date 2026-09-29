@@ -29,6 +29,7 @@ All queries and results: `sql-practice/week01_profiling.sql`
 - **Master data:** Four machine models, unevenly distributed (model3: 35, model4: 32
   model2: 17, model1: 16); machine age ranges from 0 to 20 years (average 11.3)
 - **Identifiers:** `errorID` is text (e.g. `error1`), not a number
+- **Maintenace records in 2014:** The 2014 records are not a full maintenance log, but the last replacement per component before telemetry starts, i.e. the starting point for features such as "time since last replacement".
 
 
 ## Assumptions and open questions

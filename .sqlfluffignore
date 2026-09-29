@@ -1,0 +1,3 @@
+# DuckDB CLI exploration script: uses DESCRIBE and dot commands (.mode),
+# which are not standard SQL and cannot be parsed. Pipeline SQL is linted.
+sql-practice/week01_profiling.sql
